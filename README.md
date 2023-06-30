@@ -2,11 +2,19 @@
 
 <br />
 
-## shallow routing
+## Shallow routing
 
 Shallow routing allows you to change the URL without running data fetching methods again.
 
-for example when you want to do filtering with input that changes the url on each type `/blog?search=shallow`
+> for example when you want to do filtering with input that changes the url on each type `/blog?search=shallow`
+
+<br />
+
+## Problem
+
+If you used Next Js before you might noticed that in Next 12 there was a shallow routing functionality, but in the latest version (Next 13) shallow routing is no longer there.
+
+So, this is a workaround for that same functionality for both vanilla React and Next Js.
 
 <br />
 
@@ -26,7 +34,7 @@ import useShallow from "use-shallow";
 
 <br />
 
-## usage
+## Usage
 
 its used like any other React hook
 
