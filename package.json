@@ -1,0 +1,23 @@
+{
+  "name": "use-shallow",
+  "version": "1.0.0",
+  "description": "A tiny React hook for implementing shallow routing",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rollup -c"
+  },
+  "keywords": [
+    "react",
+    "react-hook",
+    "shallow",
+    "routing"
+  ],
+  "author": "Amr-rgb (amrshiha2@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^2.79.1",
+    "rollup-plugin-ts": "^3.2.0",
+    "typescript": "^5.1.6"
+  }
+}
