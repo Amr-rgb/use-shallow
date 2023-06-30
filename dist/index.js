@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.useShallow=()=>{let e;e="undefined"!=typeof window?new URLSearchParams(window.location.search):new URLSearchParams("");return[e,e=>{history.replaceState(null,"",e)}]};

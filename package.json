@@ -2,9 +2,11 @@
   "name": "use-shallow",
   "version": "1.0.0",
   "description": "A tiny React hook for implementing shallow routing",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npx rollup -c"
+    "build": "npx rollup -c",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",

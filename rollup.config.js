@@ -6,7 +6,7 @@ export default {
   output: {
     file: "dist/index.js",
     format: "cjs",
-    exports: "named", // Add this line to preserve named exports
+    exports: "named",
   },
   plugins: [
     ts({

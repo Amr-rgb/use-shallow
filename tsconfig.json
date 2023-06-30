@@ -19,7 +19,7 @@
     "paths": {
       "*": ["src/*"]
     },
-    "downlevelIteration": true // Add this option to fix the error
+    "downlevelIteration": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
