@@ -1,6 +1,6 @@
 {
   "name": "use-shallow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tiny React hook for implementing shallow routing",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
