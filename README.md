@@ -10,23 +10,27 @@ Shallow routing allows you to change the URL without running data fetching metho
 
 <br />
 
-## Problem
+## The Problem
 
 If you used Next Js before you might noticed that in Next 12 there was a shallow routing functionality, but in the latest version (Next 13) shallow routing is no longer there.
 
-So, this is a workaround for that same functionality for both vanilla React and Next Js.
+<br />
+
+## The Solution
+
+The `useShallow React Hook` is providing a workaround for that same functionality for both vanilla React and Next Js.
 
 <br />
 
 ## Installation
 
-install using npm : <br />
+Install using npm : <br />
 
 ```ts
 npm install use-shallow
 ```
 
-and then import useShallow : <br />
+And then import useShallow : <br />
 
 ```ts
 import useShallow from "use-shallow";
@@ -34,9 +38,17 @@ import useShallow from "use-shallow";
 
 <br />
 
+## NOTE _!important_
+
+Adding a state is required even if it's not used in the component.
+
+This state causes the component to re-render so it recognizes the updated url.
+
+<br />
+
 ## Usage
 
-its used like any other React hook
+Its used like any other React hook
 
 ```ts
 const [queries, push] = useShallow();
@@ -46,7 +58,7 @@ const [queries, push] = useShallow();
   and it holds the search parameters of the url
   <br />
   <br />
-  to get the value of search in a url `/blog?search=whatever`
+  To get the value of search in a url `/blog?search=whatever`
   <br />
 
   you can use
@@ -55,19 +67,18 @@ const [queries, push] = useShallow();
   queries.get("search");
   ```
 
-  <br />
-  <br />
-  well, you can use whatever props and methods are available in the `URLSearchParams` object.
+  Well, you can use whatever props and methods are available in the `URLSearchParams` object.
 
+  <br />
   <br />
 
 - `push` is a function that allows you to change the url
   <br />
   <br />
-  it takes one parameter which is the desired url you wanna route to.
+  It takes one parameter which is the desired url you wanna route to.
   <br />
   <br />
-  example:
+  Example:
   ```ts
   push(`/blog?q=${searchQuery}`);
   ```
@@ -77,12 +88,12 @@ const [queries, push] = useShallow();
 
 ### NOTE _!important_
 
-in some cases you may need to create an unused state that changes with every change in the query to make the component rerender in order to get the current query value.
+In some cases (based on your usage) you may find that `queries` are getting the previous and not the current query.
 
-```tsx
-// just to re-render
-const [, setUnusedState] = useState<any>("");
-useEffect(() => {
-  setUnusedState(queries.get("q"));
-}, [InputValue]);
-```
+<br />
+
+For example if your url has `?query=React`, but `queries` gets `Reac` instead of `React`.
+
+<br />
+
+For solving this issue, you may consider adding an extra state that causes re-render to get the current (latest) query.
